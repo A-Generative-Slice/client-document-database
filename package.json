@@ -1,0 +1,22 @@
+{
+  "name": "client-document-database",
+  "version": "1.0.0",
+  "description": "A centralized repository for professional, branded business documents",
+  "scripts": {
+    "generate": "node scripts/generate-document.js",
+    "validate": "node scripts/validate-document.js",
+    "help": "node scripts/generate-document.js"
+  },
+  "keywords": [
+    "documents",
+    "invoices",
+    "templates",
+    "branding"
+  ],
+  "author": "Mohammed Hussain - A Generative Slice",
+  "license": "UNLICENSED",
+  "private": true,
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
