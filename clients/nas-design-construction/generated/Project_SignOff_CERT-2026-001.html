@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Sign-Off Certificate - A Generative Slice</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            color-adjust: exact !important;
+        }
+
+        body {
+            font-family: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #2C3E50;
+            line-height: 1.6;
+            background: #f8f9fa;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #FF8C1A 0%, #D97008 100%);
+            padding: 30px;
+            margin: -40px -40px 30px -40px;
+            border-bottom: 5px solid #D97008;
+            position: relative;
+            overflow: hidden;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            page-break-inside: avoid;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .logo-section {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-text {
+            font-size: 42px;
+            font-weight: 700;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            font-style: italic;
+            letter-spacing: 1px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .logo-subtitle {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 14px;
+            margin-top: 5px;
+            font-weight: 300;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .cert-title {
+            text-align: center;
+            margin: 30px 0;
+            page-break-inside: avoid;
+        }
+
+        .cert-title h1 {
+            color: #FF8C1A;
+            font-size: 28px;
+            font-weight: 700;
+            border-bottom: 3px solid #FF8C1A;
+            display: inline-block;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .cert-meta {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border-left: 4px solid #FF8C1A;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            page-break-inside: avoid;
+        }
+
+        .cert-meta-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .meta-item {
+            display: flex;
+            gap: 10px;
+        }
+
+        .meta-label {
+            font-weight: 600;
+            color: #555;
+        }
+
+        .meta-value {
+            color: #2C3E50;
+            font-weight: 700;
+        }
+
+        .section {
+            margin: 30px 0;
+            page-break-inside: avoid;
+        }
+
+        .section-title {
+            color: #FF8C1A;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border-left: 5px solid #FF8C1A;
+            padding-left: 15px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .section-subtitle {
+            color: #2C3E50;
+            font-size: 18px;
+            font-weight: 600;
+            margin: 20px 0 15px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .section p {
+            font-size: 15px;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .deliverables {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .deliverable-item {
+            background: #fff8f0;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #FF8C1A;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .checkmark {
+            color: #FF8C1A;
+            font-size: 24px;
+            font-weight: bold;
+            flex-shrink: 0;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .deliverable-text {
+            font-size: 14px;
+            color: #2C3E50;
+        }
+
+        .phase-transition {
+            background: linear-gradient(135deg, #fff8f0 0%, #ffe8cc 100%);
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border: 2px solid #FF8C1A;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            page-break-inside: avoid;
+        }
+
+        .phase-transition p {
+            font-size: 15px;
+            color: #2C3E50;
+        }
+
+        .phase-transition strong {
+            color: #D97008;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .acceptance-box {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border: 2px solid #FF8C1A;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            page-break-inside: avoid;
+        }
+
+        .acceptance-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .acceptance-list li {
+            padding: 10px 0 10px 35px;
+            position: relative;
+            font-size: 15px;
+        }
+
+        .acceptance-list li::before {
+            content: '✓';
+            color: #FF8C1A;
+            position: absolute;
+            left: 0;
+            font-size: 24px;
+            font-weight: bold;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .signatures {
+            margin-top: 50px;
+            page-break-inside: avoid;
+        }
+
+        .signature-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .signature-box {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            border: 2px solid #FF8C1A;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            page-break-inside: avoid;
+        }
+
+        .signature-box h3 {
+            color: #FF8C1A;
+            font-size: 18px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #FF8C1A;
+            padding-bottom: 10px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .signature-line {
+            margin: 30px 0 15px 0;
+            border-top: 2px solid #2C3E50;
+            padding-top: 10px;
+        }
+
+        .signature-detail {
+            margin: 8px 0;
+            font-size: 14px;
+        }
+
+        .signature-label {
+            font-weight: 600;
+            color: #555;
+            display: inline-block;
+            width: 60px;
+        }
+
+        .signature-value {
+            color: #2C3E50;
+            font-weight: 700;
+        }
+
+        .final-statement {
+            background: linear-gradient(135deg, #FF8C1A 0%, #D97008 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 40px;
+            font-weight: 600;
+            font-size: 14px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            page-break-inside: avoid;
+        }
+
+        @media print {
+            body {
+                background: white;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .container {
+                max-width: 100%;
+                padding: 20px;
+                margin: 0;
+            }
+
+            .header {
+                margin: -20px -20px 20px -20px;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+
+            @page {
+                size: A4;
+                margin: 0 !important;
+            }
+
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-section">
+                <div class="logo-text">A Generative Slice</div>
+                <div class="logo-subtitle">Professional Web Development & Maintenance Services</div>
+            </div>
+        </div>
+
+        <div class="cert-title">
+            <h1>Project Acceptance & Sign-Off Certificate</h1>
+        </div>
+
+        <div class="cert-meta">
+            <div class="cert-meta-grid">
+                <div class="meta-item">
+                    <span class="meta-label">Project Name:</span>
+                    <span class="meta-value">NAS Design & Construction Website Development</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Project URL:</span>
+                    <span class="meta-value">nasdesignconstruction.com</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Certificate Date:</span>
+                    <span class="meta-value">April 6, 2026</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Document Reference:</span>
+                    <span class="meta-value">CERT-2026-001</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">DECLARATION OF COMPLETION</h2>
+            <p>
+                This document serves as formal certification that the initial website development project for
+                <strong>NAS Design & Construction</strong> has been successfully completed, deployed, and delivered
+                in accordance with the agreed-upon specifications and requirements.
+            </p>
+
+            <h3 class="section-subtitle">Project Deliverables — Status: Complete</h3>
+            <p>The following deliverables have been fully executed and are now live in production:</p>
+
+            <div class="deliverables">
+                <div class="deliverable-item">
+                    <div class="checkmark">✓</div>
+                    <div class="deliverable-text">Custom website design and frontend development</div>
+                </div>
+                <div class="deliverable-item">
+                    <div class="checkmark">✓</div>
+                    <div class="deliverable-text">Complete structural implementation and page architecture</div>
+                </div>
+                <div class="deliverable-item">
+                    <div class="checkmark">✓</div>
+                    <div class="deliverable-text">Website deployment to production environment</div>
+                </div>
+                <div class="deliverable-item">
+                    <div class="checkmark">✓</div>
+                    <div class="deliverable-text">Domain registration and DNS configuration</div>
+                </div>
+                <div class="deliverable-item">
+                    <div class="checkmark">✓</div>
+                    <div class="deliverable-text">Professional email setup and configuration</div>
+                </div>
+                <div class="deliverable-item">
+                    <div class="checkmark">✓</div>
+                    <div class="deliverable-text">Initial content integration and optimization</div>
+                </div>
+                <div class="deliverable-item">
+                    <div class="checkmark">✓</div>
+                    <div class="deliverable-text">Cross-browser and mobile responsiveness testing</div>
+                </div>
+                <div class="deliverable-item">
+                    <div class="checkmark">✓</div>
+                    <div class="deliverable-text">Final quality assurance and client review</div>
+                </div>
+            </div>
+
+            <h3 class="section-subtitle">Phase Transition</h3>
+            <div class="phase-transition">
+                <p>
+                    This certificate formally concludes the <strong>Development Phase</strong> of this project and marks
+                    the official transition into the <strong>Maintenance Phase</strong>, as governed by the separate
+                    Maintenance & Management Agreement effective from the domain purchase date.
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">CLIENT ACCEPTANCE</h2>
+            <div class="acceptance-box">
+                <p style="margin-bottom: 20px;">By signing below, <strong>NAS Design & Construction</strong> confirms that:</p>
+                <ol class="acceptance-list">
+                    <li>The website has been reviewed and inspected in its entirety</li>
+                    <li>All deliverables meet the agreed-upon specifications</li>
+                    <li>The Development Phase is hereby accepted as complete and satisfactory</li>
+                    <li>The project is approved for closure and transition to ongoing maintenance</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="signatures">
+            <h2 class="section-title">SIGNATURES</h2>
+
+            <div class="signature-row">
+                <div class="signature-box">
+                    <h3>Service Provider</h3>
+                    <div class="signature-line">Signature</div>
+                    <div class="signature-detail">
+                        <span class="signature-label">Name:</span>
+                        <span class="signature-value">Mohammed Hussain</span>
+                    </div>
+                    <div class="signature-detail">
+                        <span class="signature-label">Title:</span>
+                        <span class="signature-value">Representative, A Generative Slice</span>
+                    </div>
+                    <div class="signature-detail">
+                        <span class="signature-label">Date:</span>
+                        <span class="signature-value">April 10, 2026</span>
+                    </div>
+                </div>
+
+                <div class="signature-box">
+                    <h3>Client</h3>
+                    <div class="signature-line">Signature</div>
+                    <div class="signature-detail">
+                        <span class="signature-label">Name:</span>
+                        <span class="signature-value">N. Abdul Hakeem / A. Roshan Sanofar</span>
+                    </div>
+                    <div class="signature-detail">
+                        <span class="signature-label">Title:</span>
+                        <span class="signature-value">Representative, NAS Design & Construction</span>
+                    </div>
+                    <div class="signature-detail">
+                        <span class="signature-label">Date:</span>
+                        <span class="signature-value">April 10, 2026</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="final-statement">
+            This document constitutes legal acceptance of the completed work and authorizes final invoicing for services rendered.
+        </div>
+    </div>
+</body>
+</html>

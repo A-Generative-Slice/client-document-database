@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Sign-Off Certificate {{CERT_REFERENCE}} - A Generative Slice</title>
+    <link rel="stylesheet" href="../design-system/brand.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-section">
+                <div class="logo-text">A Generative Slice</div>
+                <div class="logo-subtitle">Professional Web Development & Maintenance Services</div>
+            </div>
+        </div>
+
+        <div class="doc-title">
+            <h1>Project Acceptance & Sign-Off Certificate</h1>
+        </div>
+
+        <div class="doc-meta">
+            <div class="doc-meta-grid">
+                <div class="meta-item">
+                    <span class="meta-label">Project Name:</span>
+                    <span class="meta-value">{{PROJECT_NAME}}</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Project URL:</span>
+                    <span class="meta-value">{{PROJECT_URL}}</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Certificate Date:</span>
+                    <span class="meta-value">{{CERT_DATE}}</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Document Reference:</span>
+                    <span class="meta-value">{{CERT_REFERENCE}}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">DECLARATION OF COMPLETION</h2>
+            <p>
+                This document serves as formal certification that the initial website development project for
+                <strong>{{CLIENT_NAME}}</strong> has been successfully completed, deployed, and delivered
+                in accordance with the agreed-upon specifications and requirements.
+            </p>
+
+            <h3 class="subsection-header" style="margin-top: 20px;">Project Deliverables — Status: Complete</h3>
+            <p>The following deliverables have been fully executed and are now live in production:</p>
+
+            <!--
+                DELIVERABLES GRID
+                Add or remove deliverable-item blocks as needed.
+                Always keep the ✓ checkmark and the same structure.
+            -->
+            <div class="deliverables">
+                <div class="deliverable-item">
+                    <div class="checkmark">✓</div>
+                    <div class="deliverable-text">{{DELIVERABLE_1}}</div>
+                </div>
+                <div class="deliverable-item">
+                    <div class="checkmark">✓</div>
+                    <div class="deliverable-text">{{DELIVERABLE_2}}</div>
+                </div>
+                <div class="deliverable-item">
+                    <div class="checkmark">✓</div>
+                    <div class="deliverable-text">{{DELIVERABLE_3}}</div>
+                </div>
+                <div class="deliverable-item">
+                    <div class="checkmark">✓</div>
+                    <div class="deliverable-text">{{DELIVERABLE_4}}</div>
+                </div>
+                <div class="deliverable-item">
+                    <div class="checkmark">✓</div>
+                    <div class="deliverable-text">{{DELIVERABLE_5}}</div>
+                </div>
+                <div class="deliverable-item">
+                    <div class="checkmark">✓</div>
+                    <div class="deliverable-text">{{DELIVERABLE_6}}</div>
+                </div>
+                <!-- Add more deliverable items as needed -->
+            </div>
+
+            <h3 class="subsection-header">Phase Transition</h3>
+            <div class="phase-transition">
+                <p>
+                    This certificate formally concludes the <strong>Development Phase</strong> of this project and marks
+                    the official transition into the <strong>Maintenance Phase</strong>, as governed by the separate
+                    Maintenance & Management Agreement effective from {{EFFECTIVE_DATE}}.
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">CLIENT ACCEPTANCE</h2>
+            <div class="acceptance-box">
+                <p style="margin-bottom: 20px;">By signing below, <strong>{{CLIENT_NAME}}</strong> confirms that:</p>
+                <ol class="acceptance-list">
+                    <li>The website has been reviewed and inspected in its entirety</li>
+                    <li>All deliverables meet the agreed-upon specifications</li>
+                    <li>The Development Phase is hereby accepted as complete and satisfactory</li>
+                    <li>The project is approved for closure and transition to ongoing maintenance</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="signatures">
+            <h2 class="section-header">SIGNATURES</h2>
+
+            <div class="signature-row">
+                <div class="signature-box">
+                    <h3>Service Provider</h3>
+                    <div class="signature-line">Signature</div>
+                    <div class="signature-detail">
+                        <span class="signature-label">Name:</span>
+                        <span class="signature-value">Mohammed Hussain</span>
+                    </div>
+                    <div class="signature-detail">
+                        <span class="signature-label">Title:</span>
+                        <span class="signature-value">Representative, A Generative Slice</span>
+                    </div>
+                    <div class="signature-detail">
+                        <span class="signature-label">Date:</span>
+                        <span class="signature-value">{{SIGNING_DATE}}</span>
+                    </div>
+                </div>
+
+                <div class="signature-box">
+                    <h3>Client</h3>
+                    <div class="signature-line">Signature</div>
+                    <div class="signature-detail">
+                        <span class="signature-label">Name:</span>
+                        <span class="signature-value">{{CLIENT_SIGNATORY}}</span>
+                    </div>
+                    <div class="signature-detail">
+                        <span class="signature-label">Title:</span>
+                        <span class="signature-value">Representative, {{CLIENT_NAME}}</span>
+                    </div>
+                    <div class="signature-detail">
+                        <span class="signature-label">Date:</span>
+                        <span class="signature-value">{{SIGNING_DATE}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="final-statement">
+            This document constitutes legal acceptance of the completed work and authorizes final invoicing for services rendered.
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice INV-1001 - A Generative Slice</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            color-adjust: exact !important;
+        }
+
+        body {
+            font-family: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #2C3E50;
+            line-height: 1.6;
+            background: #f8f9fa;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .container {
+            max-width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #FF8C1A 0%, #D97008 100%);
+            padding: 30px;
+            margin: -40px -40px 30px -40px;
+            border-bottom: 5px solid #D97008;
+            position: relative;
+            overflow: hidden;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            page-break-inside: avoid;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .logo-section {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-text {
+            font-size: 42px;
+            font-weight: 700;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            font-style: italic;
+            letter-spacing: 1px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .logo-subtitle {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 14px;
+            margin-top: 5px;
+            font-weight: 300;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .invoice-title {
+            text-align: center;
+            margin: 30px 0;
+            page-break-inside: avoid;
+        }
+
+        .invoice-title h1 {
+            color: #FF8C1A;
+            font-size: 32px;
+            font-weight: 700;
+            border-bottom: 3px solid #FF8C1A;
+            display: inline-block;
+            padding-bottom: 10px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .info-section {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+            gap: 30px;
+            page-break-inside: avoid;
+        }
+
+        .info-box {
+            flex: 1;
+        }
+
+        .info-box h3 {
+            color: #FF8C1A;
+            font-size: 18px;
+            margin-bottom: 15px;
+            border-left: 4px solid #FF8C1A;
+            padding-left: 12px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .info-box p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .invoice-meta {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border-left: 4px solid #FF8C1A;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            page-break-inside: avoid;
+        }
+
+        .invoice-meta-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .meta-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .meta-label {
+            font-weight: 600;
+            color: #555;
+        }
+
+        .meta-value {
+            color: #2C3E50;
+            font-weight: 700;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #FF8C1A 0%, #D97008 100%);
+            color: white;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        thead th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        tbody tr:hover {
+            background: #fff8f0;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        tbody td {
+            padding: 20px 15px;
+            vertical-align: top;
+        }
+
+        .item-number {
+            font-weight: 700;
+            color: #FF8C1A;
+            font-size: 18px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .item-description {
+            font-size: 14px;
+        }
+
+        .item-description strong {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 15px;
+            color: #2C3E50;
+        }
+
+        .item-description em {
+            display: block;
+            margin-top: 10px;
+            padding: 10px;
+            background: #fff3e6;
+            border-left: 3px solid #FF8C1A;
+            font-style: normal;
+            font-size: 13px;
+            color: #D97008;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .amount {
+            text-align: right;
+            font-weight: 700;
+            font-size: 16px;
+            color: #2C3E50;
+            white-space: nowrap;
+        }
+
+        .totals-section {
+            margin: 30px 0;
+            display: flex;
+            justify-content: flex-end;
+            page-break-inside: avoid;
+        }
+
+        .totals-table {
+            width: 400px;
+            border: 2px solid #FF8C1A;
+            border-radius: 8px;
+            overflow: hidden;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .totals-table table {
+            margin: 0;
+        }
+
+        .totals-table tr {
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .totals-table tr:last-child {
+            background: linear-gradient(135deg, #FF8C1A 0%, #D97008 100%);
+            color: white;
+            border-bottom: none;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .totals-table td {
+            padding: 15px 20px;
+        }
+
+        .totals-table .total-label {
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .totals-table .total-amount {
+            text-align: right;
+            font-weight: 700;
+            font-size: 18px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .totals-table tr:last-child .total-amount {
+            font-size: 22px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .payment-details {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border: 2px solid #FF8C1A;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            page-break-inside: avoid;
+        }
+
+        .payment-details h3 {
+            color: #FF8C1A;
+            margin-bottom: 20px;
+            font-size: 20px;
+            border-bottom: 2px solid #FF8C1A;
+            padding-bottom: 10px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .payment-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .payment-item {
+            background: white;
+            padding: 12px 15px;
+            border-radius: 5px;
+            border-left: 3px solid #FF8C1A;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .payment-label {
+            font-size: 12px;
+            color: #666;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .payment-value {
+            font-size: 16px;
+            color: #2C3E50;
+            font-weight: 700;
+            margin-top: 5px;
+        }
+
+        .payment-reference {
+            background: white;
+            padding: 12px 15px;
+            border-radius: 5px;
+            border-left: 3px solid #D97008;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .terms {
+            background: #fff8f0;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border-left: 4px solid #FF8C1A;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            page-break-inside: avoid;
+        }
+
+        .terms h3 {
+            color: #2C3E50;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .terms ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .terms li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+            font-size: 14px;
+        }
+
+        .terms li::before {
+            content: '●';
+            color: #FF8C1A;
+            position: absolute;
+            left: 0;
+            font-size: 18px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-top: 3px solid #FF8C1A;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            page-break-inside: avoid;
+        }
+
+        .footer p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .footer strong {
+            color: #FF8C1A;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .thank-you {
+            text-align: center;
+            font-style: italic;
+            color: #FF8C1A;
+            font-size: 16px;
+            margin-top: 30px;
+            font-weight: 500;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            page-break-inside: avoid;
+        }
+
+        .budget-summary {
+            background: linear-gradient(135deg, #fff8f0 0%, #ffe8cc 100%);
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border: 2px solid #FF8C1A;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            page-break-inside: avoid;
+        }
+
+        .budget-summary h3 {
+            color: #FF8C1A;
+            font-size: 18px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #FF8C1A;
+            padding-bottom: 10px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .budget-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 140, 26, 0.2);
+        }
+
+        .budget-row:last-child {
+            border-bottom: none;
+            font-weight: 700;
+            font-size: 16px;
+            color: #D97008;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .budget-label {
+            color: #2C3E50;
+            font-weight: 600;
+        }
+
+        .budget-amount {
+            color: #D97008;
+            font-weight: 700;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        @media print {
+            body {
+                background: white;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .container {
+                max-width: 100%;
+                padding: 20px;
+                margin: 0;
+                height: auto;
+            }
+
+            .header {
+                margin: -20px -20px 20px -20px;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            @page {
+                size: A4;
+                margin: 0 !important;
+            }
+
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-section">
+                <div class="logo-text">A Generative Slice</div>
+                <div class="logo-subtitle">Professional Web Development & Maintenance Services</div>
+            </div>
+        </div>
+
+        <div class="invoice-title">
+            <h1>INVOICE</h1>
+        </div>
+
+        <div class="invoice-meta">
+            <div class="invoice-meta-grid">
+                <div class="meta-item">
+                    <span class="meta-label">Invoice Number:</span>
+                    <span class="meta-value">INV-1001</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Invoice Date:</span>
+                    <span class="meta-value">April 6, 2026</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Payment Terms:</span>
+                    <span class="meta-value">Net 15 Days</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Due Date:</span>
+                    <span class="meta-value">April 21, 2026</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="info-box">
+                <h3>FROM</h3>
+                <p><strong>A Generative Slice</strong></p>
+                <p>Mohammed Hussain</p>
+                <p>Email: agenerativeslice@gmail.com</p>
+                <p>Phone: +91 78128 91494</p>
+            </div>
+
+            <div class="info-box">
+                <h3>BILL TO</h3>
+                <p><strong>NAS Design & Construction</strong></p>
+                <p>Attn: N. Abdul Hakeem & A. Roshan Sanofar</p>
+                <p>No. 144, 1st Floor, Valluvarkottam High Road</p>
+                <p>Nungambakkam, Chennai-600034</p>
+                <p>Email: nasdesignconstruction@gmail.com</p>
+                <p>Phone: +91 99522 40055</p>
+                <p>Website: nasdesignconstruction.com</p>
+            </div>
+        </div>
+
+        <div class="budget-summary">
+            <h3>PROJECT BUDGET SUMMARY – 3-YEAR ENGAGEMENT</h3>
+            <div class="budget-row">
+                <span class="budget-label">Total 3-Year Project Budget</span>
+                <span class="budget-amount">₹ 12,000.00</span>
+            </div>
+            <div class="budget-row">
+                <span class="budget-label">Less: Hostinger Services (Paid directly by client via order session)</span>
+                <span class="budget-amount">(₹ 4,353.42)</span>
+            </div>
+            <div class="budget-row">
+                <span class="budget-label">A Generative Slice Fee – Balance Due</span>
+                <span class="budget-amount">₹ 7,646.58</span>
+            </div>
+            <div class="budget-row">
+                <span class="budget-label">Less: Pre-invoiced Year 1 Maintenance (applies to this invoice)</span>
+                <span class="budget-amount">(₹ 2,215.33)</span>
+            </div>
+            <div class="budget-row">
+                <span class="budget-label">THIS INVOICE COVERS DEVELOPMENT PHASE</span>
+                <span class="budget-amount">₹ 7,568.75</span>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 60px;">Item</th>
+                    <th>Description</th>
+                    <th style="width: 150px; text-align: right;">Amount (₹)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="item-number">1</td>
+                    <td class="item-description">
+                        <strong>Custom Website Development & Deployment</strong>
+                        Complete frontend build, structural design, and deployment for nasdesignconstruction.com
+                    </td>
+                    <td class="amount">₹ 1,000.00</td>
+                </tr>
+                <tr>
+                    <td class="item-number">2</td>
+                    <td class="item-description">
+                        <strong>Year 1 Maintenance & Management Retainer</strong>
+                        12-month comprehensive website maintenance and management services.
+                        <em>Coverage period begins on the official domain purchase date: April 10, 2026</em>
+                    </td>
+                    <td class="amount">₹ 2,215.33</td>
+                </tr>
+                <tr>
+                    <td class="item-number">3</td>
+                    <td class="item-description">
+                        <strong>Years 2–3 Maintenance & Management Retainers (advance payment)</strong>
+                        Advance payment for Years 2 and 3 of ongoing maintenance services (₹2,215.33 each year).
+                        <em>These payments fulfill the client's long-term engagement commitment and lock in current pricing.</em>
+                    </td>
+                    <td class="amount">₹ 4,353.42</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="totals-section">
+            <div class="totals-table">
+                <table>
+                    <tr>
+                        <td class="total-label">Subtotal</td>
+                        <td class="total-amount">₹ 7,568.75</td>
+                    </tr>
+                    <tr>
+                        <td class="total-label">Tax</td>
+                        <td class="total-amount">₹ 0.00</td>
+                    </tr>
+                    <tr>
+                        <td class="total-label">TOTAL AMOUNT DUE</td>
+                        <td class="total-amount">₹ 7,568.75</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="payment-details">
+            <h3>PAYMENT DETAILS</h3>
+            <p style="margin-bottom: 15px; font-size: 14px;">Please remit payment via bank transfer to the following account:</p>
+
+            <div class="payment-grid">
+                <div class="payment-item">
+                    <div class="payment-label">Bank Name</div>
+                    <div class="payment-value">State Bank of India</div>
+                </div>
+                <div class="payment-item">
+                    <div class="payment-label">Account Name</div>
+                    <div class="payment-value">Mohammed Hussain S</div>
+                </div>
+                <div class="payment-item">
+                    <div class="payment-label">Account Number</div>
+                    <div class="payment-value">39575910574</div>
+                </div>
+                <div class="payment-item">
+                    <div class="payment-label">IFSC Code</div>
+                    <div class="payment-value">SBIN0005201</div>
+                </div>
+            </div>
+
+            <div class="payment-reference">
+                <div class="payment-label">Payment Reference</div>
+                <div class="payment-value">Please include Invoice #INV-1001 in your transfer description</div>
+            </div>
+        </div>
+
+        <div class="terms">
+            <h3>Terms & Conditions</h3>
+            <ul>
+                <li>Payment is due within 15 days of invoice date (Net 15 Days).</li>
+                <li>Late payments may be subject to interest charges of 1.5% per month.</li>
+                <li>All services rendered are non-refundable once delivered and accepted.</li>
+                <li>This invoice represents the final billing for the initial development phase and first year of maintenance services.</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p><strong>For any billing inquiries, please contact:</strong></p>
+            <p>Mohammed Hussain | agenerativeslice@gmail.com | +91 78128 91494</p>
+        </div>
+
+        <div class="thank-you">
+            Thank you for your business.
+        </div>
+    </div>
+</body>
+</html>

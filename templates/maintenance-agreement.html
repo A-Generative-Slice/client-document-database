@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance Agreement {{AGREEMENT_REFERENCE}} - A Generative Slice</title>
+    <link rel="stylesheet" href="../design-system/brand.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-section">
+                <div class="logo-text">A Generative Slice</div>
+                <div class="logo-subtitle">Professional Web Development & Maintenance Services</div>
+            </div>
+        </div>
+
+        <div class="doc-title">
+            <h1>Website Maintenance & Management Agreement</h1>
+        </div>
+
+        <div class="doc-meta doc-meta-flex">
+            <div class="meta-item meta-item-centered">
+                <div class="meta-label">Agreement Date</div>
+                <div class="meta-value">{{AGREEMENT_DATE}}</div>
+            </div>
+            <div class="meta-item meta-item-centered">
+                <div class="meta-label">Agreement Reference</div>
+                <div class="meta-value">{{AGREEMENT_REFERENCE}}</div>
+            </div>
+        </div>
+
+        <h2 class="section-header">Parties to this Agreement</h2>
+        <div class="parties">
+            <div class="party-box">
+                <h3>Service Provider</h3>
+                <p><strong>A Generative Slice</strong></p>
+                <p>Representative: Mohammed Hussain</p>
+                <p>Email: agenerativeslice@gmail.com</p>
+                <p>Phone: +91 78128 91494</p>
+            </div>
+
+            <div class="party-box">
+                <h3>Client</h3>
+                <p><strong>{{CLIENT_NAME}}</strong></p>
+                <p>Representatives: {{CLIENT_CONTACT}}</p>
+                <p>{{CLIENT_ADDRESS_LINE1}}<br>{{CLIENT_ADDRESS_LINE2}}</p>
+                <p>Email: {{CLIENT_EMAIL}}</p>
+                <p>Phone: {{CLIENT_PHONE}}</p>
+                <p>Website: {{CLIENT_WEBSITE}}</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">1. Term of Agreement</h2>
+            <p>This Maintenance & Management Agreement shall remain in effect for a period of <strong>{{TERM_DURATION}}</strong>.</p>
+
+            <div class="highlight-box">
+                <p><strong>{{TERM_DESCRIPTION}}</strong></p>
+            </div>
+
+            <div class="term-dates">
+                <div class="date-box">
+                    <div class="date-label">Effective Date</div>
+                    <div class="date-value">{{EFFECTIVE_DATE}}</div>
+                </div>
+                <div class="date-box">
+                    <div class="date-label">Expiration Date</div>
+                    <div class="date-value">{{EXPIRATION_DATE}}</div>
+                </div>
+            </div>
+
+            <p>Upon expiration, this agreement may be renewed by mutual written consent of both parties.</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">2. Scope of Services</h2>
+
+            <div class="subsection">
+                <h3 class="subsection-header">2.1 Hosting & Infrastructure Management</h3>
+                <p>A Generative Slice shall provide and maintain the following services throughout the term of this agreement:</p>
+
+                <div class="service-grid">
+                    <div class="service-item">
+                        <strong>Web Hosting Services</strong>
+                        Complete hosting infrastructure management including server resources, bandwidth allocation, and uptime monitoring
+                    </div>
+                    <div class="service-item">
+                        <strong>Server Maintenance</strong>
+                        Regular server updates, performance optimization, and configuration management
+                    </div>
+                    <div class="service-item">
+                        <strong>Security Management</strong>
+                        Implementation of security patches, SSL certificate maintenance, and basic security monitoring
+                    </div>
+                    <div class="service-item">
+                        <strong>Backup Services</strong>
+                        Routine automated backups of website files and databases, with secure off-site storage
+                    </div>
+                    <div class="service-item">
+                        <strong>Uptime Monitoring</strong>
+                        Proactive monitoring to ensure maximum website availability
+                    </div>
+                    <!-- Add more service items as needed -->
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-header">2.2 Content Update Services</h3>
+                <p>The Client is entitled to request minor manual content updates through A Generative Slice, subject to the following terms:</p>
+                <ul>
+                    <li><strong>Monthly Request Allowance:</strong> Up to {{MONTHLY_UPDATES}} content update requests per calendar month</li>
+                    <li><strong>Eligible Updates:</strong> Text modifications, image replacements, contact information updates, gallery additions, and similar content-level changes</li>
+                    <li><strong>Turnaround Time:</strong> {{TURNAROUND_TIME}} from receipt of clear, written update instructions</li>
+                    <li><strong>Update Requests:</strong> All requests must be submitted via email to agenerativeslice@gmail.com with clear specifications</li>
+                </ul>
+                <p><em>Unused monthly requests do not roll over to subsequent months.</em></p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">3. Service Exclusions</h2>
+            <p>The following services are explicitly <strong>outside the scope</strong> of this Maintenance Agreement and will require a separate project scope, quotation, and invoicing:</p>
+
+            <div class="subsection">
+                <h3 class="subsection-header">3.1 Major Structural Changes</h3>
+                <ul>
+                    <li>Complete website redesigns or significant layout modifications</li>
+                    <li>Changes to the website's fundamental architecture or navigation structure</li>
+                    <li>Integration of new third-party platforms or services</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-header">3.2 New Feature Development</h3>
+                <ul>
+                    <li>Development of custom functionality or interactive features</li>
+                    <li>Addition of e-commerce capabilities, user authentication systems, or databases</li>
+                    <li>Implementation of advanced plugins or custom coding requirements</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-header">3.3 New Page Creation</h3>
+                <ul>
+                    <li>Design and development of entirely new website pages or sections</li>
+                    <li>Creation of new page templates or custom layouts</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-header">3.4 Third-Party Services</h3>
+                <ul>
+                    <li>Costs associated with premium plugins, themes, or third-party software licenses</li>
+                    <li>Fees for external services such as email marketing platforms or analytics tools</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <p><strong>Should the Client require any excluded services, A Generative Slice will provide a separate written quotation. Work will commence only upon written approval and payment of the additional fees.</strong></p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">4. Service Level Commitments</h2>
+
+            <div class="subsection">
+                <h3 class="subsection-header">4.1 Uptime Guarantee</h3>
+                <p>A Generative Slice shall make commercially reasonable efforts to maintain website uptime of {{UPTIME_SLA}} or higher, excluding scheduled maintenance windows and circumstances beyond our control.</p>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-header">4.2 Response Time</h3>
+                <ul>
+                    <li><strong>Critical Issues</strong> (website completely down): Response within {{CRITICAL_RESPONSE_TIME}}</li>
+                    <li><strong>Non-Critical Issues</strong> (minor bugs, content updates): Response within {{NONCRITICAL_RESPONSE_TIME}}</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-header">4.3 Business Hours</h3>
+                <p>Business hours are defined as 9:00 AM to 6:00 PM IST, Monday through Friday, excluding public holidays in India.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">5. Client Responsibilities</h2>
+            <p>The Client agrees to:</p>
+            <ul>
+                <li>Provide clear, written instructions for all content update requests</li>
+                <li>Supply all necessary materials (text, images, documents) in web-ready formats when possible</li>
+                <li>Maintain the confidentiality of any access credentials provided by A Generative Slice</li>
+                <li>Refrain from making unauthorized changes to the website's hosting or technical infrastructure</li>
+                <li>Respond promptly to requests for clarification or approval</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">6. Payment Terms</h2>
+
+            <div class="subsection">
+                <h3 class="subsection-header">6.1 Annual Fee Structure</h3>
+                <!--
+                    FEE TABLE
+                    Add or remove rows as needed. Keep the structure identical.
+                -->
+                <table class="fee-table">
+                    <thead>
+                        <tr>
+                            <th>Year</th>
+                            <th>Annual Fee</th>
+                            <th>Payment Terms</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Year 1</strong></td>
+                            <td class="fee-amount">₹ {{YEAR_1_FEE}}</td>
+                            <td>{{YEAR_1_TERMS}}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Year 2</strong></td>
+                            <td class="fee-amount">₹ {{YEAR_2_FEE}}</td>
+                            <td>{{YEAR_2_TERMS}}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Year 3</strong></td>
+                            <td class="fee-amount">₹ {{YEAR_3_FEE}}</td>
+                            <td>{{YEAR_3_TERMS}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><em>A Generative Slice reserves the right to adjust annual fees for subsequent years with 60 days' written notice.</em></p>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-header">6.2 Payment Schedule</h3>
+                <p>All maintenance fees are due in advance of the service period. Failure to remit payment by the due date may result in service suspension until payment is received.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">7. Termination</h2>
+
+            <div class="subsection">
+                <h3 class="subsection-header">7.1 Termination by Client</h3>
+                <p>The Client may terminate this agreement at any time with 30 days' written notice. Prepaid fees are non-refundable and will not be prorated.</p>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-header">7.2 Termination by Service Provider</h3>
+                <p>A Generative Slice may terminate this agreement with 30 days' written notice in the event of:</p>
+                <ul>
+                    <li>Non-payment of fees after 15 days past due date</li>
+                    <li>Breach of agreement terms by the Client</li>
+                    <li>Misuse of services or hosting resources</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-header">7.3 Effect of Termination</h3>
+                <p>Upon termination, A Generative Slice will provide the Client with a final backup of all website files and databases. The Client will be responsible for arranging alternative hosting and migration services.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">8. Intellectual Property</h2>
+            <p>All website content, code, and design elements created during the initial development phase remain the intellectual property of the Client. A Generative Slice retains the right to use the website as a portfolio example unless otherwise requested in writing.</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">9. Limitation of Liability</h2>
+            <p>A Generative Slice's total liability under this agreement shall not exceed the total annual maintenance fee paid by the Client for the year in which the claim arises. A Generative Slice shall not be liable for any indirect, incidental, consequential, or punitive damages.</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">10. Force Majeure</h2>
+            <p>Neither party shall be held liable for delays or failures in performance resulting from circumstances beyond their reasonable control, including but not limited to acts of God, natural disasters, government actions, internet service provider failures, or cyber attacks.</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">11. Governing Law</h2>
+            <p>This agreement shall be governed by and construed in accordance with the laws of India. Any disputes arising under this agreement shall be subject to the exclusive jurisdiction of the courts of Chennai, Tamil Nadu.</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">12. Entire Agreement</h2>
+            <p>This document constitutes the entire agreement between the parties concerning website maintenance and management services and supersedes all prior discussions, negotiations, and agreements. Any modifications must be made in writing and signed by both parties.</p>
+        </div>
+
+        <div class="signatures">
+            <h2 class="section-header">SIGNATURES</h2>
+            <p style="margin-bottom: 20px;">By signing below, both parties acknowledge that they have read, understood, and agree to be legally bound by the terms and conditions set forth in this Maintenance & Management Agreement.</p>
+
+            <div class="signature-row">
+                <div class="signature-box">
+                    <h3>Service Provider</h3>
+                    <div class="signature-line">Signature</div>
+                    <div class="signature-detail">
+                        <span class="signature-label">Name:</span>
+                        <span class="signature-value">Mohammed Hussain</span>
+                    </div>
+                    <div class="signature-detail">
+                        <span class="signature-label">Title:</span>
+                        <span class="signature-value">Representative, A Generative Slice</span>
+                    </div>
+                    <div class="signature-detail">
+                        <span class="signature-label">Date:</span>
+                        <span class="signature-value">{{SIGNING_DATE}}</span>
+                    </div>
+                </div>
+
+                <div class="signature-box">
+                    <h3>Client</h3>
+                    <div class="signature-line">Signature</div>
+                    <div class="signature-detail">
+                        <span class="signature-label">Name:</span>
+                        <span class="signature-value">{{CLIENT_SIGNATORY}}</span>
+                    </div>
+                    <div class="signature-detail">
+                        <span class="signature-label">Title:</span>
+                        <span class="signature-value">Representative, {{CLIENT_NAME}}</span>
+                    </div>
+                    <div class="signature-detail">
+                        <span class="signature-label">Date:</span>
+                        <span class="signature-value">{{SIGNING_DATE}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="final-note">
+            Please retain a signed copy of this agreement for your records. A fully executed copy will be provided to both parties.
+        </div>
+
+        <div class="footer-brand">
+            A Generative Slice | Professional Web Development & Maintenance Services
+        </div>
+    </div>
+</body>
+</html>

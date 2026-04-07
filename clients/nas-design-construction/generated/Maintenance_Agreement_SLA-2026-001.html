@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance Agreement - A Generative Slice</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            color-adjust: exact !important;
+        }
+
+        body {
+            font-family: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #2C3E50;
+            line-height: 1.7;
+            background: #f8f9fa;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #FF8C1A 0%, #D97008 100%);
+            padding: 30px;
+            margin: -40px -40px 30px -40px;
+            border-bottom: 5px solid #D97008;
+            position: relative;
+            overflow: hidden;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            page-break-inside: avoid;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .logo-section {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-text {
+            font-size: 42px;
+            font-weight: 700;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            font-style: italic;
+            letter-spacing: 1px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .logo-subtitle {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 14px;
+            margin-top: 5px;
+            font-weight: 300;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .doc-title {
+            text-align: center;
+            margin: 30px 0;
+            page-break-inside: avoid;
+        }
+
+        .doc-title h1 {
+            color: #FF8C1A;
+            font-size: 26px;
+            font-weight: 700;
+            border-bottom: 3px solid #FF8C1A;
+            display: inline-block;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .doc-meta {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border-left: 4px solid #FF8C1A;
+            display: flex;
+            justify-content: space-around;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            page-break-inside: avoid;
+        }
+
+        .meta-item {
+            text-align: center;
+        }
+
+        .meta-label {
+            font-weight: 600;
+            color: #555;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .meta-value {
+            color: #2C3E50;
+            font-weight: 700;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        .parties {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+            page-break-inside: avoid;
+        }
+
+        .party-box {
+            background: #fff8f0;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #FF8C1A;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .party-box h3 {
+            color: #FF8C1A;
+            font-size: 16px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .party-box p {
+            font-size: 13px;
+            margin: 5px 0;
+        }
+
+        .section {
+            margin: 35px 0;
+            page-break-inside: avoid;
+        }
+
+        .section-header {
+            color: #FF8C1A;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border-left: 5px solid #FF8C1A;
+            padding-left: 15px;
+            text-transform: uppercase;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .subsection {
+            margin: 25px 0;
+        }
+
+        .subsection-header {
+            color: #D97008;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .section p {
+            font-size: 14px;
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #fff8f0 0%, #ffe8cc 100%);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 2px solid #FF8C1A;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            page-break-inside: avoid;
+        }
+
+        .highlight-box strong {
+            color: #D97008;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .term-dates {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .date-box {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #FF8C1A;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .date-label {
+            font-size: 12px;
+            color: #666;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .date-value {
+            font-size: 18px;
+            color: #2C3E50;
+            font-weight: 700;
+            margin-top: 5px;
+        }
+
+        ul {
+            margin: 15px 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        ul li {
+            padding: 10px 0 10px 30px;
+            position: relative;
+            font-size: 14px;
+        }
+
+        ul li::before {
+            content: '●';
+            color: #FF8C1A;
+            position: absolute;
+            left: 0;
+            font-size: 18px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .service-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #FF8C1A;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .service-item strong {
+            color: #D97008;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 15px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .fee-table {
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: collapse;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .fee-table th,
+        .fee-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .fee-table thead {
+            background: linear-gradient(135deg, #FF8C1A 0%, #D97008 100%);
+            color: white;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .fee-table tbody tr:hover {
+            background: #fff8f0;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .fee-amount {
+            font-weight: 700;
+            color: #D97008;
+            font-size: 16px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .signatures {
+            margin-top: 50px;
+            page-break-inside: avoid;
+        }
+
+        .signature-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .signature-box {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            border: 2px solid #FF8C1A;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            page-break-inside: avoid;
+        }
+
+        .signature-box h3 {
+            color: #FF8C1A;
+            font-size: 18px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #FF8C1A;
+            padding-bottom: 10px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .signature-line {
+            margin: 30px 0 15px 0;
+            border-top: 2px solid #2C3E50;
+            padding-top: 10px;
+        }
+
+        .signature-detail {
+            margin: 8px 0;
+            font-size: 14px;
+        }
+
+        .signature-label {
+            font-weight: 600;
+            color: #555;
+            display: inline-block;
+            width: 60px;
+        }
+
+        .signature-value {
+            color: #2C3E50;
+            font-weight: 700;
+        }
+
+        .final-note {
+            background: linear-gradient(135deg, #FF8C1A 0%, #D97008 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 40px;
+            font-weight: 600;
+            font-size: 14px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            page-break-inside: avoid;
+        }
+
+        .footer-brand {
+            text-align: center;
+            margin-top: 30px;
+            font-style: italic;
+            color: #FF8C1A;
+            font-size: 16px;
+            font-weight: 500;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        @media print {
+            body {
+                background: white;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .container {
+                max-width: 100%;
+                padding: 20px;
+                margin: 0;
+            }
+
+            .header {
+                margin: -20px -20px 20px -20px;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+
+            @page {
+                size: A4;
+                margin: 0 !important;
+            }
+
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-section">
+                <div class="logo-text">A Generative Slice</div>
+                <div class="logo-subtitle">Professional Web Development & Maintenance Services</div>
+            </div>
+        </div>
+
+        <div class="doc-title">
+            <h1>Website Maintenance & Management Agreement</h1>
+        </div>
+
+        <div class="doc-meta">
+            <div class="meta-item">
+                <div class="meta-label">Agreement Date</div>
+                <div class="meta-value">April 6, 2026</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Agreement Reference</div>
+                <div class="meta-value">SLA-2026-001</div>
+            </div>
+        </div>
+
+        <h2 class="section-header">Parties to this Agreement</h2>
+        <div class="parties">
+            <div class="party-box">
+                <h3>Service Provider</h3>
+                <p><strong>A Generative Slice</strong></p>
+                <p>Representative: Mohammed Hussain</p>
+                <p>Email: agenerativeslice@gmail.com</p>
+                <p>Phone: +91 78128 91494</p>
+            </div>
+
+            <div class="party-box">
+                <h3>Client</h3>
+                <p><strong>NAS Design & Construction</strong></p>
+                <p>Representatives: N. Abdul Hakeem & A. Roshan Sanofar</p>
+                <p>No. 144, 1st Floor, Valluvarkottam High Road,<br>Nungambakkam, Chennai-600034</p>
+                <p>Email: nasdesignconstruction@gmail.com</p>
+                <p>Phone: +91 99522 40055</p>
+                <p>Website: nasdesignconstruction.com</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">1. Term of Agreement</h2>
+            <p>This Maintenance & Management Agreement shall remain in effect for a period of <strong>exactly three (3) years</strong>.</p>
+
+            <div class="highlight-box">
+                <p><strong>The three-year service period officially commences on the purchase date of the domain registration (the "Effective Date") and remains active for exactly three years from that date.</strong></p>
+            </div>
+
+            <div class="term-dates">
+                <div class="date-box">
+                    <div class="date-label">Effective Date</div>
+                    <div class="date-value">April 10, 2026</div>
+                </div>
+                <div class="date-box">
+                    <div class="date-label">Expiration Date</div>
+                    <div class="date-value">April 9, 2029</div>
+                </div>
+            </div>
+
+            <p>Upon expiration, this agreement may be renewed by mutual written consent of both parties.</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">2. Scope of Services</h2>
+
+            <div class="subsection">
+                <h3 class="subsection-header">2.1 Hosting & Infrastructure Management</h3>
+                <p>A Generative Slice shall provide and maintain the following services throughout the term of this agreement:</p>
+
+                <div class="service-grid">
+                    <div class="service-item">
+                        <strong>Web Hosting Services</strong>
+                        Complete hosting infrastructure management including server resources, bandwidth allocation, and uptime monitoring
+                    </div>
+                    <div class="service-item">
+                        <strong>Server Maintenance</strong>
+                        Regular server updates, performance optimization, and configuration management
+                    </div>
+                    <div class="service-item">
+                        <strong>Security Management</strong>
+                        Implementation of security patches, SSL certificate maintenance, and basic security monitoring
+                    </div>
+                    <div class="service-item">
+                        <strong>Backup Services</strong>
+                        Routine automated backups of website files and databases, with secure off-site storage
+                    </div>
+                    <div class="service-item">
+                        <strong>Uptime Monitoring</strong>
+                        Proactive monitoring to ensure maximum website availability
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-header">2.2 Content Update Services</h3>
+                <p>The Client is entitled to request minor manual content updates through A Generative Slice, subject to the following terms:</p>
+                <ul>
+                    <li><strong>Monthly Request Allowance:</strong> Up to 4 content update requests per calendar month</li>
+                    <li><strong>Eligible Updates:</strong> Text modifications, image replacements, contact information updates, gallery additions, and similar content-level changes</li>
+                    <li><strong>Turnaround Time:</strong> 48-72 business hours from receipt of clear, written update instructions</li>
+                    <li><strong>Update Requests:</strong> All requests must be submitted via email to agenerativeslice@gmail.com with clear specifications</li>
+                </ul>
+                <p><em>Unused monthly requests do not roll over to subsequent months.</em></p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">3. Service Exclusions</h2>
+            <p>The following services are explicitly <strong>outside the scope</strong> of this Maintenance Agreement and will require a separate project scope, quotation, and invoicing:</p>
+
+            <div class="subsection">
+                <h3 class="subsection-header">3.1 Major Structural Changes</h3>
+                <ul>
+                    <li>Complete website redesigns or significant layout modifications</li>
+                    <li>Changes to the website's fundamental architecture or navigation structure</li>
+                    <li>Integration of new third-party platforms or services</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-header">3.2 New Feature Development</h3>
+                <ul>
+                    <li>Development of custom functionality or interactive features</li>
+                    <li>Addition of e-commerce capabilities, user authentication systems, or databases</li>
+                    <li>Implementation of advanced plugins or custom coding requirements</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-header">3.3 New Page Creation</h3>
+                <ul>
+                    <li>Design and development of entirely new website pages or sections</li>
+                    <li>Creation of new page templates or custom layouts</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-header">3.4 Third-Party Services</h3>
+                <ul>
+                    <li>Costs associated with premium plugins, themes, or third-party software licenses</li>
+                    <li>Fees for external services such as email marketing platforms or analytics tools</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <p><strong>Should the Client require any excluded services, A Generative Slice will provide a separate written quotation. Work will commence only upon written approval and payment of the additional fees.</strong></p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">4. Service Level Commitments</h2>
+
+            <div class="subsection">
+                <h3 class="subsection-header">4.1 Uptime Guarantee</h3>
+                <p>A Generative Slice shall make commercially reasonable efforts to maintain website uptime of 99.5% or higher, excluding scheduled maintenance windows and circumstances beyond our control.</p>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-header">4.2 Response Time</h3>
+                <ul>
+                    <li><strong>Critical Issues</strong> (website completely down): Response within 4 business hours</li>
+                    <li><strong>Non-Critical Issues</strong> (minor bugs, content updates): Response within 48 business hours</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-header">4.3 Business Hours</h3>
+                <p>Business hours are defined as 9:00 AM to 6:00 PM IST, Monday through Friday, excluding public holidays in India.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">5. Client Responsibilities</h2>
+            <p>The Client agrees to:</p>
+            <ul>
+                <li>Provide clear, written instructions for all content update requests</li>
+                <li>Supply all necessary materials (text, images, documents) in web-ready formats when possible</li>
+                <li>Maintain the confidentiality of any access credentials provided by A Generative Slice</li>
+                <li>Refrain from making unauthorized changes to the website's hosting or technical infrastructure</li>
+                <li>Respond promptly to requests for clarification or approval</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">6. Payment Terms</h2>
+
+            <div class="subsection">
+                <h3 class="subsection-header">6.1 Annual Fee Structure</h3>
+                <table class="fee-table">
+                    <thead>
+                        <tr>
+                            <th>Year</th>
+                            <th>Annual Fee</th>
+                            <th>Payment Terms</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Year 1</strong></td>
+                            <td class="fee-amount">₹ 2,215.33</td>
+                            <td>Paid in advance via Invoice #INV-1001</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Year 2</strong></td>
+                            <td class="fee-amount">₹ 2,215.33</td>
+                            <td>Payable 30 days prior to Year 2 commencement</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Year 3</strong></td>
+                            <td class="fee-amount">₹ 2,215.34</td>
+                            <td>Payable 30 days prior to Year 3 commencement</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><em>A Generative Slice reserves the right to adjust annual fees for subsequent years with 60 days' written notice.</em></p>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-header">6.2 Payment Schedule</h3>
+                <p>All maintenance fees are due in advance of the service period. Failure to remit payment by the due date may result in service suspension until payment is received.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">7. Termination</h2>
+
+            <div class="subsection">
+                <h3 class="subsection-header">7.1 Termination by Client</h3>
+                <p>The Client may terminate this agreement at any time with 30 days' written notice. Prepaid fees are non-refundable and will not be prorated.</p>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-header">7.2 Termination by Service Provider</h3>
+                <p>A Generative Slice may terminate this agreement with 30 days' written notice in the event of:</p>
+                <ul>
+                    <li>Non-payment of fees after 15 days past due date</li>
+                    <li>Breach of agreement terms by the Client</li>
+                    <li>Misuse of services or hosting resources</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-header">7.3 Effect of Termination</h3>
+                <p>Upon termination, A Generative Slice will provide the Client with a final backup of all website files and databases. The Client will be responsible for arranging alternative hosting and migration services.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">8. Intellectual Property</h2>
+            <p>All website content, code, and design elements created during the initial development phase remain the intellectual property of the Client. A Generative Slice retains the right to use the website as a portfolio example unless otherwise requested in writing.</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">9. Limitation of Liability</h2>
+            <p>A Generative Slice's total liability under this agreement shall not exceed the total annual maintenance fee paid by the Client for the year in which the claim arises. A Generative Slice shall not be liable for any indirect, incidental, consequential, or punitive damages.</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">10. Force Majeure</h2>
+            <p>Neither party shall be held liable for delays or failures in performance resulting from circumstances beyond their reasonable control, including but not limited to acts of God, natural disasters, government actions, internet service provider failures, or cyber attacks.</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">11. Governing Law</h2>
+            <p>This agreement shall be governed by and construed in accordance with the laws of India. Any disputes arising under this agreement shall be subject to the exclusive jurisdiction of the courts of Chennai, Tamil Nadu.</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">12. Entire Agreement</h2>
+            <p>This document constitutes the entire agreement between the parties concerning website maintenance and management services and supersedes all prior discussions, negotiations, and agreements. Any modifications must be made in writing and signed by both parties.</p>
+        </div>
+
+        <div class="signatures">
+            <h2 class="section-header">SIGNATURES</h2>
+            <p style="margin-bottom: 20px;">By signing below, both parties acknowledge that they have read, understood, and agree to be legally bound by the terms and conditions set forth in this Maintenance & Management Agreement.</p>
+
+            <div class="signature-row">
+                <div class="signature-box">
+                    <h3>Service Provider</h3>
+                    <div class="signature-line">Signature</div>
+                    <div class="signature-detail">
+                        <span class="signature-label">Name:</span>
+                        <span class="signature-value">Mohammed Hussain</span>
+                    </div>
+                    <div class="signature-detail">
+                        <span class="signature-label">Title:</span>
+                        <span class="signature-value">Representative, A Generative Slice</span>
+                    </div>
+                    <div class="signature-detail">
+                        <span class="signature-label">Date:</span>
+                        <span class="signature-value">April 10, 2026</span>
+                    </div>
+                </div>
+
+                <div class="signature-box">
+                    <h3>Client</h3>
+                    <div class="signature-line">Signature</div>
+                    <div class="signature-detail">
+                        <span class="signature-label">Name:</span>
+                        <span class="signature-value">N. Abdul Hakeem / A. Roshan Sanofar</span>
+                    </div>
+                    <div class="signature-detail">
+                        <span class="signature-label">Title:</span>
+                        <span class="signature-value">Representative, NAS Design & Construction</span>
+                    </div>
+                    <div class="signature-detail">
+                        <span class="signature-label">Date:</span>
+                        <span class="signature-value">April 10, 2026</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="final-note">
+            Please retain a signed copy of this agreement for your records. A fully executed copy will be provided to both parties.
+        </div>
+
+        <div class="footer-brand">
+            A Generative Slice | Professional Web Development & Maintenance Services
+        </div>
+    </div>
+</body>
+</html>
