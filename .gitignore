@@ -1,14 +1,15 @@
-# Dependencies
-node_modules/
-package-lock.json
-
-# IDEs
-.vscode/
-.idea/
+# Environment Variables
+.env
 
 # OS Files
 .DS_Store
 Thumbs.db
 
-# Logs
+# Generic temporary files
 *.log
+tmp/
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class

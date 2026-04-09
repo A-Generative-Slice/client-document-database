@@ -9,17 +9,26 @@ This file provides instructions for any AI coding assistant (Claude Code, Antigr
 - **Styling:** ALWAYS link to `/design-system/brand.css`. NEVER embed CSS inline unless strictly necessary for PDF quirks.
 
 ## 📁 REPOSITORY STRUCTURE
+- `/core/scripts/`: Automation and helper scripts.
 - `/design-system/brand.css`: The CSS definition for all components.
-- `/templates/`: Reusable HTML skeletons (use these for all new documents).
+- `/templates/`: Reusable HTML skeletons.
 - `/clients/<client-name>/generated/`: Where new document HTMLs go.
 - `/clients/<client-name>/signed/`: Where the final, authentic, legal PDFs go.
 
 ## 🛠️ DOCUMENT GENERATION PROCESS
-When asked to generate a document (Invoice, Certificate, Agreement):
-1.  **Reference the Template:** Open the corresponding file in `/templates/`.
-2.  **Fill Placeholders:** Use the information from the prompt to fill `{{PLACEHOLDERS}}`.
-3.  **Client Folder:** Create a folder in `/clients/` if it doesn't exist.
-4.  **Save HTML:** Save the filled template as a new HTML file in `/clients/<client-name>/generated/`.
+### Automated Workflow (Recommended)
+1.  **Prepare Data**: Create a temporary `data.json` with the required placeholders.
+2.  **Run Generator**:
+    ```bash
+    python core/scripts/generate.py <template-name> data.json <client-name>
+    ```
+3.  **Check Output**: The file will be created in `/clients/<client-name>/generated/`.
+
+### Manual Workflow
+1.  **Reference the Template**: Open the corresponding file in `/templates/`.
+2.  **Fill Placeholders**: Use the information from the prompt to fill `{{PLACEHOLDERS}}`.
+3.  **Client Folder**: Create a folder in `/clients/` if it doesn't exist.
+4.  **Save HTML**: Save the filled template as a new HTML file in `/clients/<client-name>/generated/`.
 5.  **Maintain Consistency:** Ensure the header gradient, logo text, typography, and signature blocks match existing documents exactly.
 
 ## 📝 STYLE GUIDELINES
