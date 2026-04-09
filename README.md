@@ -8,6 +8,15 @@ This repository is built for AI assistants (Claude, Antigravity, etc.).
 2.  **Use Templates:** Always use the HTML skeletons in `/templates/`.
 3.  **Link CSS:** Ensure all new HTML files `<link>` to `/design-system/brand.css`.
 
+## 🖥️ Document Dashboard
+You can now view and manage all your documents through a beautiful, local web interface.
+1.  **Run the Dashboard:**
+    ```bash
+    python core/scripts/serve.py
+    ```
+2.  **Access:** Open [http://localhost:8000/dashboard.html](http://localhost:8000/dashboard.html) in your browser.
+3.  **Features:** Live search, client-specific filtering, and instant document previews.
+
 ---
 
 ## 📁 Repository Structure
