@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice INV-1002 - A Generative Slice</title>
+    <link rel="stylesheet" href="../design-system/brand.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-section">
+                <div class="logo-text">A Generative Slice</div>
+                <div class="logo-subtitle">Professional Web Development & Maintenance Services</div>
+            </div>
+        </div>
+
+        <div class="doc-title">
+            <h1>INVOICE</h1>
+        </div>
+
+        <div class="doc-meta">
+            <div class="doc-meta-grid">
+                <div class="meta-item">
+                    <span class="meta-label">Invoice Number:</span>
+                    <span class="meta-value">INV-1002</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Invoice Date:</span>
+                    <span class="meta-value">April 09, 2026</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Payment Terms:</span>
+                    <span class="meta-value">Net 15 Days</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Due Date:</span>
+                    <span class="meta-value">April 24, 2026</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="info-box">
+                <h3>FROM</h3>
+                <p><strong>A Generative Slice</strong></p>
+                <p>Mohammed Hussain</p>
+                <p>Email: agenerativeslice@gmail.com</p>
+                <p>Phone: +91 78128 91494</p>
+            </div>
+
+            <div class="info-box">
+                <h3>BILL TO</h3>
+                <p><strong>Nas International</strong></p>
+                <p>Attn: N. Abdul Hakeem</p>
+                <p>No. 144, 1st Floor, Valluvarkottam High Road</p>
+                <p>Nungambakkam, Chennai-600034</p>
+                <p>Email: nasinternational@gmail.com</p>
+                <p>Phone: +91 99522 40055</p>
+                <!-- Optional: <p>Website: {{CLIENT_WEBSITE}}</p> -->
+            </div>
+        </div>
+
+        <!--
+            BUDGET SUMMARY (Optional — include for project-based invoices)
+            Remove this block for simple service invoices.
+        -->
+        <div class="budget-summary">
+            <h3>PROJECT BUDGET SUMMARY</h3>
+            <div class="budget-row">
+                <span class="budget-label">Total Project Quote</span>
+                <span class="budget-amount">₹ 5,000.00</span>
+            </div>
+            <div class="budget-row">
+                <span class="budget-label">Advance Payment (50%)</span>
+                <span class="budget-amount">₹ 2,500.00</span>
+            </div>
+            <div class="budget-row">
+                <span class="budget-label">BALANCE PAYABLE UPON DEPLOYMENT</span>
+                <span class="budget-amount">₹ 2,500.00</span>
+            </div>
+        </div>
+
+        <!--
+            LINE ITEMS TABLE
+            Add or remove <tr> rows as needed. Keep the structure identical.
+        -->
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 60px;">Item</th>
+                    <th>Description</th>
+                    <th style="width: 150px; text-align: right;">Amount (₹)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="item-number">1</td>
+                    <td class="item-description">
+                        <strong>Portfolio Website Design & Development</strong>
+                        Custom architecture, responsive design, and portfolio gallery integration.
+                    </td>
+                    <td class="amount">₹ 4,000.00</td>
+                </tr>
+                <tr>
+                    <td class="item-number">2</td>
+                    <td class="item-description">
+                        <strong>Domain & Cloud Hosting Configuration</strong>
+                        Deployment to production server, SSL setup, and email configuration.
+                        <!-- Optional note: <em>{{ITEM_2_NOTE}}</em> -->
+                    </td>
+                    <td class="amount">₹ 1,000.00</td>
+                </tr>
+                <!-- Add more rows as needed, following the same pattern -->
+            </tbody>
+        </table>
+
+        <div class="totals-section">
+            <div class="totals-table">
+                <table>
+                    <tr>
+                        <td class="total-label">Subtotal</td>
+                        <td class="total-amount">₹ 5,000.00</td>
+                    </tr>
+                    <tr>
+                        <td class="total-label">Tax</td>
+                        <td class="total-amount">₹ 0.00</td>
+                    </tr>
+                    <tr>
+                        <td class="total-label">TOTAL AMOUNT DUE</td>
+                        <td class="total-amount">₹ 5,000.00</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="payment-details">
+            <h3>PAYMENT DETAILS</h3>
+            <p style="margin-bottom: 15px; font-size: 14px;">Please remit payment via bank transfer to the following account:</p>
+
+            <div class="payment-grid">
+                <div class="payment-item">
+                    <div class="payment-label">Bank Name</div>
+                    <div class="payment-value">State Bank of India</div>
+                </div>
+                <div class="payment-item">
+                    <div class="payment-label">Account Name</div>
+                    <div class="payment-value">Mohammed Hussain S</div>
+                </div>
+                <div class="payment-item">
+                    <div class="payment-label">Account Number</div>
+                    <div class="payment-value">39575910574</div>
+                </div>
+                <div class="payment-item">
+                    <div class="payment-label">IFSC Code</div>
+                    <div class="payment-value">SBIN0005201</div>
+                </div>
+            </div>
+
+            <div class="payment-reference">
+                <div class="payment-label">Payment Reference</div>
+                <div class="payment-value">Please include Invoice #INV-1002 in your transfer description</div>
+            </div>
+        </div>
+
+        <div class="terms">
+            <h3>Terms & Conditions</h3>
+            <ul>
+                <li>Payment is due within 15 days of invoice date (Net 15 Days).</li>
+                <li>Late payments may be subject to interest charges of 1.5% per month.</li>
+                <li>All services rendered are non-refundable once delivered and accepted.</li>
+                <li>Source code will be handed over upon final payment completion.</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p><strong>For any billing inquiries, please contact:</strong></p>
+            <p>Mohammed Hussain | agenerativeslice@gmail.com | +91 78128 91494</p>
+        </div>
+
+        <div class="thank-you">
+            Thank you for your business.
+        </div>
+    </div>
+</body>
+</html>
