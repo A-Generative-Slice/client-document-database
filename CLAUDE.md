@@ -6,7 +6,8 @@ This file provides instructions for any AI coding assistant (Claude Code, Antigr
 - **Primary Color:** `#FF8C1A` (Vibrant Orange)
 - **Secondary Color:** `#D97008` (Darker Orange - for accents and hover states)
 - **Text Color:** `#2C3E50` (Professional Dark Gray)
-- **Styling:** ALWAYS link to `/design-system/brand.css`. NEVER embed CSS inline unless strictly necessary for PDF quirks.
+- **Styling:** ALWAYS link to `../../../design-system/brand.css` (assuming the standard 3-level folder depth).
+- **UI Integrity:** NEVER generate a document without ensuring the CSS link is working. A plain HTML document is a FAILURE.
 
 ## 📁 REPOSITORY STRUCTURE
 - `/core/scripts/`: Automation and helper scripts.
@@ -30,6 +31,7 @@ This file provides instructions for any AI coding assistant (Claude Code, Antigr
 3.  **Client Folder**: Create a folder in `/clients/` if it doesn't exist.
 4.  **Save HTML**: Save the filled template as a new HTML file in `/clients/<client-name>/generated/`.
 5.  **Maintain Consistency:** Ensure the header gradient, logo text, typography, and signature blocks match existing documents exactly.
+6.  **Path Verification:** After generation, verify that the `brand.css` link is exactly `../../../design-system/brand.css` to match the folder depth.
 
 ## 📝 STYLE GUIDELINES
 - High-end, premium, architectural aesthetic.
