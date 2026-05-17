@@ -496,14 +496,84 @@
             text-decoration: none;
         }
 
-        /* ── RESPONSIVE ── */
-        @media (max-width: 600px) {
-            .navbar { padding: 0 16px; }
-            .main { padding: 24px 16px 60px; }
+        /* ── RESPONSIVE: TABLET ── */
+        @media (max-width: 768px) {
+            .navbar { padding: 0 16px; height: 54px; }
+            .navbar-logo { font-size: 17px; }
+            .navbar-title { font-size: 12px; }
+            .navbar-meta { display: none; }
+            .breadcrumb { padding: 8px 16px; font-size: 12px; }
+            .main { padding: 28px 16px 60px; }
+            .home-header { margin-bottom: 32px; }
+            .home-header h1 { font-size: 24px; }
             .client-grid { grid-template-columns: 1fr; }
-            .stats-bar { gap: 20px; }
-            .doc-table { font-size: 12px; }
+            .client-header { gap: 14px; margin-bottom: 28px; padding-bottom: 18px; }
+            .client-header-avatar { width: 44px; height: 44px; font-size: 18px; }
+            .client-header-info h2 { font-size: 18px; }
             .doc-filename { display: none; }
+            .doc-table th:nth-child(3),
+            .doc-table td:nth-child(3) { display: none; }
+        }
+
+        /* ── RESPONSIVE: MOBILE ── */
+        @media (max-width: 480px) {
+            .navbar { padding: 0 12px; height: 50px; }
+            .navbar-logo { font-size: 15px; }
+            .navbar-divider { height: 18px; }
+            .navbar-title { font-size: 11px; }
+            .main { padding: 20px 12px 50px; }
+            .home-header { margin-bottom: 24px; }
+            .home-header h1 { font-size: 20px; }
+            .home-header p { font-size: 12px; }
+            .stats-bar { gap: 16px; }
+            .stat-value { font-size: 22px; }
+            .stat-label { font-size: 10px; }
+            .client-card { padding: 16px; gap: 12px; }
+            .client-avatar { width: 40px; height: 40px; font-size: 16px; }
+            .client-name { font-size: 14px; }
+            .client-arrow { display: none; }
+            .client-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+            .client-header-info h2 { font-size: 17px; }
+            .client-header-info p { font-size: 12px; }
+            .doc-section-header { gap: 8px; }
+            .doc-section-icon { width: 28px; height: 28px; font-size: 12px; }
+            .doc-section-title { font-size: 13px; }
+
+            /* Convert table to stacked cards on mobile */
+            .doc-table { border: none; background: none; }
+            .doc-table thead { display: none; }
+            .doc-table tbody { display: flex; flex-direction: column; gap: 10px; }
+            .doc-table tbody tr {
+                display: flex;
+                flex-direction: column;
+                background: var(--bg-white);
+                border: 1px solid var(--border);
+                border-radius: var(--radius);
+                padding: 14px;
+                gap: 8px;
+            }
+            .doc-table tbody tr:hover {
+                border-color: var(--brand);
+            }
+            .doc-table td {
+                padding: 0;
+                border-bottom: none;
+            }
+            .doc-table td:nth-child(3) { display: none; }
+            .doc-type-badge { font-size: 13px; }
+            .doc-ref { font-size: 11px; }
+            .doc-actions {
+                justify-content: stretch;
+                gap: 8px;
+            }
+            .doc-actions .btn {
+                flex: 1;
+                justify-content: center;
+                padding: 10px 12px;
+                font-size: 12px;
+            }
+            .btn { min-height: 40px; }
+            .footer { font-size: 10px; padding: 16px 12px; margin-top: 40px; }
         }
 
         /* ── PRINT ── */
