@@ -388,24 +388,23 @@
             print-color-adjust: exact !important;
         }
 
-        .signature-image-container {
+        .signature-line-wrapper {
             position: relative;
-            height: 0;
-            overflow: visible;
+            margin: 30px 0 15px 0;
         }
 
-        .signature-img {
+        .signature-img-overlay {
             position: absolute;
-            bottom: -5px;
-            left: 20px;
-            height: 70px;
+            bottom: 12px;
+            left: 90px;
+            height: 50px;
             mix-blend-mode: multiply;
             filter: contrast(1.1) brightness(1.05);
             z-index: 5;
         }
 
         .signature-line {
-            margin: 30px 0 15px 0;
+            margin: 0 !important;
             border-top: 2px solid #2C3E50;
             padding-top: 10px;
         }
@@ -793,10 +792,10 @@
             <div class="signature-row">
                 <div class="signature-box">
                     <h3>Service Provider</h3>
-                    <div class="signature-image-container">
-                        <img src="../../../mohammedhussainsign.png" class="signature-img" alt="Mohammed Hussain Signature">
+                    <div class="signature-line-wrapper">
+                        <div class="signature-line">Signature</div>
+                        <img src="../../../mohammedhussainsign.png" class="signature-img-overlay" alt="Mohammed Hussain Signature">
                     </div>
-                    <div class="signature-line">Signature</div>
                     <div class="signature-detail">
                         <span class="signature-label">Name:</span>
                         <span class="signature-value">Mohammed Hussain</span>
