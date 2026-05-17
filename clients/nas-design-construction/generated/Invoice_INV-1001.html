@@ -186,5 +186,12 @@
             Thank you for your business.
         </div>
     </div>
+    <script>
+        if (window.location.search.includes('print=true')) {
+            window.addEventListener('load', () => {
+                setTimeout(() => { window.print(); }, 500);
+            });
+        }
+    </script>
 </body>
 </html>

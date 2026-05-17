@@ -819,5 +819,12 @@
             A Generative Slice | Professional Web Development & Maintenance Services
         </div>
     </div>
+    <script>
+        if (window.location.search.includes('print=true')) {
+            window.addEventListener('load', () => {
+                setTimeout(() => { window.print(); }, 500);
+            });
+        }
+    </script>
 </body>
 </html>

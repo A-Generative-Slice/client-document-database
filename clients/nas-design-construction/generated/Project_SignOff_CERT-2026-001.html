@@ -528,5 +528,12 @@
             This document constitutes legal acceptance of the completed work and authorizes final invoicing for services rendered.
         </div>
     </div>
+    <script>
+        if (window.location.search.includes('print=true')) {
+            window.addEventListener('load', () => {
+                setTimeout(() => { window.print(); }, 500);
+            });
+        }
+    </script>
 </body>
 </html>

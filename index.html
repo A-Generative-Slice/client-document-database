@@ -540,12 +540,16 @@
             .doc-section-title { font-size: 13px; }
 
             /* Convert table to stacked cards on mobile */
+            .doc-table, .doc-table tbody, .doc-table tr, .doc-table td {
+                display: block !important;
+                width: 100% !important;
+            }
             .doc-table { border: none; background: none; }
-            .doc-table thead { display: none; }
-            .doc-table tbody { display: flex; flex-direction: column; gap: 10px; }
+            .doc-table thead { display: none !important; }
+            .doc-table tbody { display: flex !important; flex-direction: column; gap: 10px; }
             .doc-table tbody tr {
-                display: flex;
-                flex-direction: column;
+                display: flex !important;
+                flex-direction: column !important;
                 background: var(--bg-white);
                 border: 1px solid var(--border);
                 border-radius: var(--radius);
@@ -751,7 +755,7 @@
             const openLabel = isPDF ? 'View PDF' : 'View';
             const printBtn = isPDF
                 ? `<a href="${doc.file}" download class="btn btn-green">↓ Download</a>`
-                : `<a href="${doc.file}" target="_blank" class="btn" onclick="event.stopPropagation()">⎙ Print</a>`;
+                : `<a href="${doc.file}?print=true" target="_blank" class="btn" onclick="event.stopPropagation()">⎙ Print</a>`;
 
             return `
                 <tr>
