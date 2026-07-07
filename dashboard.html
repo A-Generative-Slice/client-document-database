@@ -46,6 +46,7 @@
                 <h3 id="preview-title">Document Preview</h3>
                 <div style="display: flex; gap: 10px;">
                     <button class="btn btn-primary" id="btn-open-new">Open in New Tab</button>
+                    <button class="btn" style="background-color: var(--brand-primary); color: white;" id="btn-print" onclick="printIframe()">Print PDF</button>
                     <button class="btn btn-close" onclick="closePreview()">Close</button>
                 </div>
             </div>
@@ -55,29 +56,48 @@
 
     <script>
         /* DATA_START */const DOC_DATA = {
+  "sree-ambal-catering": {
+    "name": "Sree Ambal Catering",
+    "documents": [
+      {
+        "title": "Maintenance Agreement SLA-2026-SAC-001",
+        "id": "N/A",
+        "date": "2026-07-06 06:08",
+        "path": "clients/sree-ambal-catering/generated/maintenance-agreement.html",
+        "filename": "maintenance-agreement.html"
+      },
+      {
+        "title": "Invoice AGS-2026-042",
+        "id": "AGS-2026-042",
+        "date": "2026-07-06 06:08",
+        "path": "clients/sree-ambal-catering/generated/invoice-AGS-2026-042.html",
+        "filename": "invoice-AGS-2026-042.html"
+      }
+    ]
+  },
   "nas-design-construction": {
     "name": "Nas Design Construction",
     "documents": [
       {
         "title": "Invoice INV-1001",
         "id": "INV-1001",
-        "date": "2026-04-09 14:44",
+        "date": "2026-07-06 05:39",
         "path": "clients/nas-design-construction/generated/Invoice_INV-1001.html",
         "filename": "Invoice_INV-1001.html"
       },
       {
-        "title": "Maintenance Agreement",
-        "id": "N/A",
-        "date": "2026-04-07 18:10",
-        "path": "clients/nas-design-construction/generated/Maintenance_Agreement_SLA-2026-001.html",
-        "filename": "Maintenance_Agreement_SLA-2026-001.html"
-      },
-      {
         "title": "Project Sign-Off Certificate",
         "id": "NAS Design & Construction Website Development",
-        "date": "2026-04-07 18:10",
+        "date": "2026-07-06 05:39",
         "path": "clients/nas-design-construction/generated/Project_SignOff_CERT-2026-001.html",
         "filename": "Project_SignOff_CERT-2026-001.html"
+      },
+      {
+        "title": "Maintenance Agreement",
+        "id": "N/A",
+        "date": "2026-07-06 05:39",
+        "path": "clients/nas-design-construction/generated/Maintenance_Agreement_SLA-2026-001.html",
+        "filename": "Maintenance_Agreement_SLA-2026-001.html"
       }
     ]
   }
@@ -172,6 +192,14 @@
             document.getElementById('preview-overlay').style.display = 'none';
             document.body.style.overflow = 'auto';
             document.getElementById('preview-frame').src = '';
+        }
+
+        function printIframe() {
+            const frame = document.getElementById('preview-frame');
+            if (frame && frame.contentWindow) {
+                frame.contentWindow.focus();
+                frame.contentWindow.print();
+            }
         }
 
         init();

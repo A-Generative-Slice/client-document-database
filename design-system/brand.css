@@ -798,3 +798,105 @@ ul li::before {
     print-color-adjust: exact !important;
     page-break-inside: avoid;
 }
+
+/* === MOBILE RESPONSIVENESS === */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: var(--spacing-lg) var(--spacing-md);
+        width: 100%;
+    }
+
+    .header {
+        margin: calc(var(--spacing-lg) * -1) calc(var(--spacing-md) * -1) var(--spacing-lg) calc(var(--spacing-md) * -1);
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+
+    .logo-text {
+        font-size: 28px;
+    }
+
+    .logo-subtitle {
+        font-size: 12px;
+    }
+
+    .doc-title h1 {
+        font-size: 22px;
+    }
+
+    .doc-meta-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .doc-meta-flex {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .info-section {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+    }
+
+    .parties {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .term-dates {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .deliverables {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    /* Make table horizontally scrollable on small screens to prevent layout breakage */
+    table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    thead, tbody, tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    thead th, tbody td {
+        padding: var(--spacing-sm);
+        font-size: 13px;
+        word-wrap: break-word;
+    }
+
+    .totals-section {
+        justify-content: stretch;
+    }
+
+    .totals-table {
+        width: 100%;
+    }
+
+    .payment-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .signature-row {
+        flex-direction: column;
+        gap: var(--spacing-xl);
+    }
+
+    .signature-box {
+        width: 100%;
+    }
+}

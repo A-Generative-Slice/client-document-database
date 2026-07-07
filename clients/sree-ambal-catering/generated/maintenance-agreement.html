@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance Agreement SLA-2026-SAC-001 - A Generative Slice</title>
+    <link rel="stylesheet" href="../../../design-system/brand.css">
+    <style>
+        .pdf-export-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #FF8C1A;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 9999;
+            transition: background-color 0.2s, transform 0.2s;
+            font-family: 'Inter', sans-serif;
+        }
+        .pdf-export-btn:hover {
+            background-color: #D97008;
+            transform: scale(1.05);
+        }
+        @media print {
+            .pdf-export-btn {
+                display: none !important;
+            }
+            body {
+                background: white !important;
+                color: #2C3E50 !important;
+            }
+            .container {
+                padding: 0 !important;
+                margin: 0 !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                box-shadow: none !important;
+            }
+            tr, table, .payment-details, .terms, .signatures, .signature-box, .section, .parties, .party-box {
+                page-break-inside: avoid !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="pdf-export-btn" onclick="window.print()">Export to PDF</button>
+
+    <div class="container">
+        <div class="header">
+            <div class="logo-section">
+                <div class="logo-text">A Generative Slice</div>
+                <div class="logo-subtitle">Professional Web Development & Maintenance Services</div>
+            </div>
+        </div>
+
+        <div class="doc-title">
+            <h1>Website Maintenance & Management Agreement</h1>
+        </div>
+
+        <div class="doc-meta doc-meta-flex">
+            <div class="meta-item meta-item-centered">
+                <div class="meta-label">Agreement Date</div>
+                <div class="meta-value">July 6, 2026</div>
+            </div>
+            <div class="meta-item meta-item-centered">
+                <div class="meta-label">Agreement Reference</div>
+                <div class="meta-value">SLA-2026-SAC-001</div>
+            </div>
+        </div>
+
+        <h2 class="section-header">Parties to this Agreement</h2>
+        <div class="parties">
+            <div class="party-box">
+                <h3>Service Provider</h3>
+                <p><strong>A Generative Slice</strong></p>
+                <p>Representative: Mohammed Hussain</p>
+                <p>Email: agenerativeslice@gmail.com</p>
+                <p>Phone: +91 78128 91494</p>
+            </div>
+
+            <div class="party-box">
+                <h3>Client</h3>
+                <p><strong>Sree Ambal Catering Services</strong></p>
+                <p>Representatives: Management Team</p>
+                <p>Chennai, Tamil Nadu<br>India</p>
+                <p>Email: sreeambalcatering@gmail.com</p>
+                <p>Phone: N/A</p>
+                <p>Website: N/A</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">1. Term of Agreement</h2>
+            <p>This Maintenance & Management Agreement shall remain in effect for a period of <strong>1 Year</strong>.</p>
+
+            <div class="highlight-box">
+                <p><strong>This agreement outlines the monthly service terms and SLA commitments for the digital inventory platform.</strong></p>
+            </div>
+
+            <div class="term-dates">
+                <div class="date-box">
+                    <div class="date-label">Effective Date</div>
+                    <div class="date-value">July 6, 2026</div>
+                </div>
+                <div class="date-box">
+                    <div class="date-label">Expiration Date</div>
+                    <div class="date-value">July 5, 2027</div>
+                </div>
+            </div>
+
+            <p>Upon expiration, this agreement may be renewed by mutual written consent of both parties.</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">2. Scope of Services & SLA Coverage</h2>
+
+            <div class="subsection">
+                <h3 class="subsection-header">2.1 Active SLA Operations</h3>
+                <p>A Generative Slice shall provide and maintain the following specialized SLA tasks throughout the term of this agreement:</p>
+
+                <div class="service-grid">
+                    <div class="service-item">
+                        <strong>Database Integrity Monitoring</strong>
+                        Continuous oversight and health maintenance of the Supabase backend database environment.
+                    </div>
+                    <div class="service-item">
+                        <strong>Asset Caching Updates</strong>
+                        Frequent updates to offline asset caching models to ensure seamless and rapid catalog performance.
+                    </div>
+                    <div class="service-item">
+                        <strong>Catalog Item Management</strong>
+                        Management and catalog alignment for 200+ South Indian catalog items and menu entries.
+                    </div>
+                    <div class="service-item">
+                        <strong>Priority Technical Support</strong>
+                        Dedicated fast-response developers for incident resolution, debugging, and service availability.
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-header">2.2 Content Update Allowance</h3>
+                <p>The Client is entitled to request content updates through A Generative Slice, subject to the following terms:</p>
+                <ul>
+                    <li><strong>Monthly Request Allowance:</strong> Up to 10 content update requests per calendar month</li>
+                    <li><strong>Eligible Updates:</strong> Text modifications, menu pricing updates, catalog additions, image replacements, and basic database field tweaks</li>
+                    <li><strong>Turnaround Time:</strong> 48 Hours from receipt of clear, written update instructions</li>
+                    <li><strong>Update Requests:</strong> All requests must be submitted via email to agenerativeslice@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">3. Service Level Commitments</h2>
+
+            <div class="subsection">
+                <h3 class="subsection-header">3.1 Uptime Guarantee</h3>
+                <p>A Generative Slice shall make commercially reasonable efforts to maintain database and PWA application uptime of 99.9% or higher, excluding scheduled maintenance windows.</p>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-header">3.2 Response Time</h3>
+                <ul>
+                    <li><strong>Critical Issues</strong> (PWA offline, Supabase database down): Response within 4 Hours</li>
+                    <li><strong>Non-Critical Issues</strong> (basic menu updates, minor styling bugs): Response within 24 Hours</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">4. Payment Terms</h2>
+
+            <div class="subsection">
+                <h3 class="subsection-header">4.1 Fee Structure</h3>
+                <table class="fee-table">
+                    <thead>
+                        <tr>
+                            <th>Year</th>
+                            <th>Annual Fee</th>
+                            <th>Payment Terms</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Year 1</strong></td>
+                            <td class="fee-amount">₹ 36,000.00</td>
+                            <td>Paid monthly at ₹3,000.00/month in advance</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-header">4.2 Payment Schedule</h3>
+                <p>All maintenance fees are due in advance of the monthly service period. Failure to remit payment by the due date may result in service suspension until payment is received.</p>
+            </div>
+        </div>
+
+        <div class="signatures">
+            <h2 class="section-header">SIGNATURES</h2>
+            <p style="margin-bottom: 20px;">By signing below, both parties acknowledge that they have read, understood, and agree to be legally bound by the terms and conditions set forth in this Maintenance & Management Agreement.</p>
+
+            <div class="signature-row">
+                <div class="signature-box">
+                    <h3>Service Provider</h3>
+                    <div class="signature-line" style="height: 40px; border-bottom: 1px dashed var(--text-light); margin-bottom: 10px;"></div>
+                    <div class="signature-detail">
+                        <span class="signature-label">Name:</span>
+                        <span class="signature-value">Mohammed Hussain</span>
+                    </div>
+                    <div class="signature-detail">
+                        <span class="signature-label">Title:</span>
+                        <span class="signature-value">Representative, A Generative Slice</span>
+                    </div>
+                    <div class="signature-detail">
+                        <span class="signature-label">Date:</span>
+                        <span class="signature-value">July 6, 2026</span>
+                    </div>
+                </div>
+
+                <div class="signature-box">
+                    <h3>Client</h3>
+                    <div class="signature-line" style="height: 40px; border-bottom: 1px dashed var(--text-light); margin-bottom: 10px;"></div>
+                    <div class="signature-detail">
+                        <span class="signature-label">Name:</span>
+                        <span class="signature-value">Management Representative</span>
+                    </div>
+                    <div class="signature-detail">
+                        <span class="signature-label">Title:</span>
+                        <span class="signature-value">Representative, Sree Ambal Catering Services</span>
+                    </div>
+                    <div class="signature-detail">
+                        <span class="signature-label">Date:</span>
+                        <span class="signature-value">July 6, 2026</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="final-note">
+            Please retain a signed copy of this agreement for your records. A fully executed copy will be provided to both parties.
+        </div>
+
+        <div class="footer-brand">
+            A Generative Slice | Professional Web Development & Maintenance Services
+        </div>
+    </div>
+</body>
+</html>
