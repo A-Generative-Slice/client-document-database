@@ -799,6 +799,127 @@ ul li::before {
     page-break-inside: avoid;
 }
 
+/* === SIGNATURES === */
+.signatures {
+    margin: var(--spacing-3xl) 0;
+    page-break-inside: avoid;
+}
+
+.signature-row {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-2xl);
+    margin-top: var(--spacing-2xl);
+}
+
+.signature-box {
+    flex: 1;
+    background: var(--bg-white);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-md);
+    border: 2px solid var(--brand-primary);
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    page-break-inside: avoid;
+}
+
+.signature-box h3 {
+    color: var(--brand-primary);
+    font-size: 18px;
+    margin-bottom: var(--spacing-lg);
+    border-bottom: 2px solid var(--brand-primary);
+    padding-bottom: var(--spacing-sm);
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+}
+
+.signature-line {
+    margin: var(--spacing-2xl) 0 var(--spacing-md) 0;
+    border-top: 2px solid var(--text-primary);
+    padding-top: var(--spacing-sm);
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.signature-detail {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.signature-label {
+    font-weight: 600;
+    color: var(--text-secondary);
+    display: inline-block;
+    width: 60px;
+}
+
+.signature-value {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+/* === FOOTER & NOTES === */
+.final-note {
+    background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-dark) 100%);
+    color: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    text-align: center;
+    margin-top: var(--spacing-3xl);
+    font-weight: 600;
+    font-size: 14px;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    page-break-inside: avoid;
+}
+
+.footer-brand {
+    text-align: center;
+    margin-top: var(--spacing-2xl);
+    font-style: italic;
+    color: var(--brand-primary);
+    font-size: 16px;
+    font-weight: 500;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+}
+
+.footer {
+    margin-top: var(--spacing-3xl);
+    padding-top: var(--spacing-lg);
+    border-top: 2px solid var(--border-light);
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.thank-you {
+    margin-top: var(--spacing-xl);
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--brand-primary);
+    font-style: italic;
+}
+
+/* === ACCEPTANCE SECTION === */
+.acceptance-box {
+    background: var(--bg-card);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--brand-primary);
+    margin: var(--spacing-lg) 0;
+}
+
+.acceptance-list {
+    margin-left: var(--spacing-xl);
+    line-height: var(--line-height-relaxed);
+}
+
+.acceptance-list li {
+    margin-bottom: var(--spacing-sm);
+}
+
 /* === MOBILE RESPONSIVENESS === */
 @media screen and (max-width: 768px) {
     .container {
