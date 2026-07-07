@@ -7,6 +7,7 @@ from datetime import datetime
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 CLIENTS_DIR = os.path.join(BASE_DIR, 'clients')
 DASHBOARD_FILE = os.path.join(BASE_DIR, 'dashboard.html')
+INDEX_FILE = os.path.join(BASE_DIR, 'index.html')
 
 def extract_metadata(html_path):
     """Simple regex based extraction of Title and ID from generated HTML"""
@@ -92,7 +93,9 @@ def update_dashboard():
         )
         with open(DASHBOARD_FILE, 'w', encoding='utf-8') as f:
             f.write(new_html)
-        print(f"✅ Dashboard updated with {sum(len(c['documents']) for c in data.values())} documents across {len(data)} clients.")
+        with open(INDEX_FILE, 'w', encoding='utf-8') as f:
+            f.write(new_html)
+        print(f"✅ Dashboard and Index updated with {sum(len(c['documents']) for c in data.values())} documents across {len(data)} clients.")
     else:
         print("❌ Error: Could not find injection markers in dashboard.html")
 
