@@ -1,21 +1,22 @@
-# Light Lab (Litelab Design Consultants LLP)
+# Client Document Directory
 
-## Contact Information
-- **Company**: Litelab Design Consultants LLP
-- **Contact Person**: Bazur
-- **Email**: Commercials@litelab.in
-- **Phone**: +91 93440 01164
+This directory is set up for managing documents related to this client folder.
 
-## Project Timeline
-- **Agreement Date**: June 8, 2026
-- **Engagement Period**: 3-Month Retainer (July 2026 – September 2026)
-- **Service Domain**: AI Systems Auditing & Localized Tool Development
+## 🤖 Agent Instructions for Directory Setup
 
-## Documents
-- **Invoice**: `INV-JUL26-LightLab.html` (Generated)
-- **Mutual Non-Disclosure Agreement (NDA)**: `NDA-LightLab_SIGNED.pdf` (Signed/Authentic)
-- **Service Level & Retainer Agreement (SLA)**: `SLA-LightLab_SIGNED.pdf` (Signed/Authentic)
+To manage, generate, and store documents in this directory using an AI agent:
 
-## Notes
-- Focused on AI systems auditing, BigQuery (BQ) parameter confidentiality, and localized development workflow toolchains.
-- The signed PDFs are stored under `signed/` and are the legal source of truth.
+1. **Directory Structure**:
+   Ensure the following directories are present:
+   - `generated/`: Place generated HTML working documents here.
+   - `signed/`: Place final signed PDFs here.
+
+2. **Storing Signed Documents**:
+   - Move signed PDFs downloaded from client communications to the `signed/` folder.
+   - Use the naming standard: `<Document_Name>_SIGNED.pdf` (e.g., `NDA-LightLab_SIGNED.pdf`, `SLA-LightLab_SIGNED.pdf`).
+
+3. **Updating the Index**:
+   - Run the dashboard sync script to update index files:
+     ```bash
+     python core/scripts/update_dashboard.py
+     ```
