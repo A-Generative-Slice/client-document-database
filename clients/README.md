@@ -51,6 +51,16 @@ vim clients/new-client-name/README.md
   - Maintenance Agreement: SLA-2026-001
   - Sign-Off Certificate: CERT-2026-001
 
+### Light Lab (Litelab Design Consultants LLP)
+- **Status**: Active
+- **Services**: AI Systems Auditing & Localized Tool Development
+- **Representative**: Bazur
+- **Email**: Commercials@litelab.in
+- **Documents**:
+  - Invoice: INV-JUL26-LightLab
+  - Mutual Non-Disclosure Agreement: NDA-LightLab
+  - Service Level & Retainer Agreement: SLA-LightLab
+
 ## 🗂️ Folder Organization
 
 Each client folder should contain:

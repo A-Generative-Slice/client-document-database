@@ -1,6 +1,6 @@
 # Client Document Database — A Generative Slice
 
-A centralized, professional repository for generating and storing branded business documents (Invoices, Certificates, Agreements). Optimized for AI-assisted workflows.
+A centralized, professional repository for generating and storing branded business documents (Invoices, Certificates, Agreements) specializing in AI Systems Auditing & Localized Tool Development. Optimized for AI-assisted workflows.
 
 ## 🚀 Quick Start for AI Agents
 This repository is built for AI assistants (Claude, Antigravity, etc.). 
@@ -48,6 +48,7 @@ To get perfect, branded results from an AI assistant, use these prompt suggestio
 ---
 
 ## 🎨 Branding Source of Truth
+- **Tagline:** AI Systems Auditing & Localized Tool Development
 - **Primary Orange:** `#FF8C1A`
 - **Dark Orange:** `#D97008`
 - **Text Gray:** `#2C3E50`
