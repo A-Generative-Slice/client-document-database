@@ -46,3 +46,10 @@ This file provides instructions for any AI coding assistant (Claude Code, Antigr
 - **IFSC:** SBIN0005201
 - **Email:** agenerativeslice@gmail.com
 - **Phone:** +91 78128 91494
+
+## 🐙 VERSION CONTROL POLICY
+- ALWAYS push commits to the `main` branch. Avoid pushing to `master` (e.g., use `git push origin main` or map the push to the remote `main` branch).
+
+## 🖨️ PDF EXPORT POLICY
+- DO NOT create or use headless browser/CLI scripts to export HTML documents to PDF. The document database and templates are specifically designed to be viewed in a web browser, and exported manually as PDF by printing (Ctrl+P / Cmd+P) throughout the progress.
+
